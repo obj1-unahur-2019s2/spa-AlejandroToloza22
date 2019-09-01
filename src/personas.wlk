@@ -1,9 +1,10 @@
 
 object olivia {
-	var con=6
-	method recibirMasajes() { con+=3 }
-	method discute() { con-=1 }
-	method gradoDeConcentracion() { return con }
+	var concentracion=6
+	method recibirMasajes() { concentracion+=3 }
+	method discute() { concentracion-=1 }
+	method gradoDeConcentracion() { return concentracion }
+	method darseUnBanioDeVapor() {concentracion += 1}
 }
 
 object bruno {
