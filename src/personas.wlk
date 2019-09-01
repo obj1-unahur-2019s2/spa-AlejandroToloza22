@@ -1,9 +1,9 @@
 
 object olivia {
-	var concentracion=6
-	method recibirMasajes() { concentracion+=3 }
-	method discute() { concentracion-=1 }
-	method gradoDeConcentracion() { return concentracion }
+	var nivDeConcentracion=6
+	method recibirMasajes() { nivDeConcentracion+=3 }
+	method discute() { nivDeConcentracion-=1 }
+	method gradoDeConcentracion() { return nivDeConcentracion }
 	method darseUnBanioDeVapor() {} //Cree este method para que no tire error al probar a olivia en la consola.//
 }
 
@@ -33,21 +33,21 @@ object bruno {
 }
 
 object ramiro {
-	var contracturado = 0
+	var nivDeContractura = 0
 	var pielGrasosa = false
-	method queTanContracturadoEsta() { return contracturado }
+	method queTanContracturadoEsta() { return nivDeContractura }
 	method tienePielGrasosa() { return pielGrasosa }
 	method recibirMasajes() { 
-		if (contracturado == 0 || contracturado == 1) { 
-			contracturado = 0
+		if (nivDeContractura == 0 || nivDeContractura == 1) { 
+			nivDeContractura = 0
 		}
-		else { contracturado -= 2 }
+		else { nivDeContractura -= 2 }
 		}
 	method darseUnBanioDeVapor() { pielGrasosa = false }
 	method comerseUnBigMac() { pielGrasosa = true }
-	method bajarALaFosa() { pielGrasosa = true contracturado += 1
+	method bajarALaFosa() { pielGrasosa = true nivDeContractura += 1
 	}
-	method jugarAlPaddle() { contracturado += 3 }
+	method jugarAlPaddle() { nivDeContractura += 3 }
 	
 	method diaDeTrabajo() { 
 		self.bajarALaFosa()
