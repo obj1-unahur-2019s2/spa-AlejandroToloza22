@@ -4,7 +4,7 @@ object olivia {
 	method recibirMasajes() { concentracion+=3 }
 	method discute() { concentracion-=1 }
 	method gradoDeConcentracion() { return concentracion }
-	method darseUnBanioDeVapor() {concentracion += 1}
+	method darseUnBanioDeVapor() {} //Cree este method para que no tire error al probar a olivia en la consola.//
 }
 
 object bruno {

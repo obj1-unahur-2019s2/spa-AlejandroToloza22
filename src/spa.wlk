@@ -10,5 +10,4 @@ object spa {
 			}
 		personaAtendida = persona
 		}
-} 
- 
+}
