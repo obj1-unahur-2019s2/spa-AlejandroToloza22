@@ -1,17 +1,17 @@
 import personas.*
 import spa.*
 
-test "SpaTest de Olivia" {	//El nivel de concentracion de Olivia arranca en 6, siempre.
+test "SpaTest de Olivia" { //El nivel de concentracion de Olivia arranca en 6, siempre.
 	olivia.discute()
 	olivia.discute()
 	olivia.discute()								
 	assert.equals(3, olivia.gradoDeConcentracion()) //Al discutir 3 veces, su concentracion disminuye en 3.
 	spa.atender(olivia)									
-	assert.equals(6, olivia.gradoDeConcentracion()) //Como le dan los masajes, su concentracion aumenta a 6
+	assert.equals(6, olivia.gradoDeConcentracion()) //Como le dan los masajes, su concentracion aumenta a 6.
 	spa.atender(olivia)
 	assert.equals(12, olivia.gradoDeConcentracion()) //Y luego queda en 12 porque recibe doble ración de masajes.
 	spa.atender(olivia)
-	assert.equals(18, olivia.gradoDeConcentracion()) //Ahora en 18
+	assert.equals(18, olivia.gradoDeConcentracion()) //Ahora en 18.
 	spa.atender(bruno)
 	spa.atender(olivia)
 	assert.equals(21, olivia.gradoDeConcentracion()) // Pero como ahora atendieron a Bruno antes que a ella, solo le dan una ración.
