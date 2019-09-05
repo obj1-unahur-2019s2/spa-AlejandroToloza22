@@ -1,0 +1,29 @@
+import spa.*
+import personas.*
+
+test "Spa-Test de Ramiro" { //La contractura de ramiro arranca en 0 y su piel grasosa en false.
+	ramiro.diaDeTrabajo() 	//Nivel de contractura aumenta en 2 y su piel grasosa pasa de false a true.
+	ramiro.comerseUnBigMac()
+	spa.atender(ramiro)		//Los masajes reducen la contractura en 2, por ende, baja a 0 y su piel grasosa vuelve a false.
+	assert.equals(0, ramiro.queTanContracturadoEsta())
+	assert.equals(false, ramiro.tienePielGrasosa())
+	ramiro.bajarALaFosa()   //Nivel de contractura = 1 & piel grasosa = true
+	ramiro.jugarAlPaddle()  //Nivel de contractura += 4
+	ramiro.diaDeTrabajo()	//Nivel de contractura += 6
+	ramiro.diaDeTrabajo()	//Nivel de contractura += 8
+	ramiro.jugarAlPaddle()	//Nivel de contractura += 11
+	ramiro.jugarAlPaddle()	//Nivel de contractura += 14
+	ramiro.bajarALaFosa()	//Nivel de contractura += 15
+	assert.equals(15, ramiro.queTanContracturadoEsta())
+	assert.equals(true, ramiro.tienePielGrasosa())
+	spa.atender(ramiro)
+	assert.equals(11, ramiro.queTanContracturadoEsta()) //Tenia 15 de nivel de contractura y ahora deberia quedar en 11,
+	spa.atender(ramiro)										//ya que, fue atendido previamente y por ende recibe doble ración de masajes.
+	assert.equals(7, ramiro.queTanContracturadoEsta()) //Vuelve recibir doble ración, por eso queda en 7.
+	spa.atender(ramiro)
+	assert.equals(3, ramiro.queTanContracturadoEsta()) //Y ahora en 3.
+	spa.atender(olivia)
+	spa.atender(ramiro)									//Pero como ahora etendieron a Olivia antes que a él,
+	assert.equals(1, ramiro.queTanContracturadoEsta()) 	//solo le dan una ración y su contractura queda en 1.
+	assert.equals(false, ramiro.tienePielGrasosa())	
+}

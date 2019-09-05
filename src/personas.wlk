@@ -1,10 +1,9 @@
-
 object olivia {
 	var nivDeConcentracion=6
 	method recibirMasajes() { nivDeConcentracion+=3 }
 	method discute() { nivDeConcentracion-=1 }
 	method gradoDeConcentracion() { return nivDeConcentracion }
-	method darseUnBanioDeVapor() {} //Cree este method para que no tire error al probar a olivia en la consola.//
+	method darseUnBanioDeVapor() {} //Cree este method para que no tire error al probar a olivia en la consola o en el test.//
 }
 
 object bruno {
@@ -55,8 +54,3 @@ object ramiro {
 		self.bajarALaFosa()
 	}
 }
-
-
-
-
-
