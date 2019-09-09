@@ -1,0 +1,32 @@
+import personas.*
+import spa.*
+
+test "Spa_Test de Bruno" { //Bruno arranca en: es feliz = true, tiene sed = false y peso = 55000 gramos.
+	bruno.mediodiaEnCasa() //Su peso aumenta en 250 por ende su peso es += 55250, tieneSed = true & esFeliz = false.
+	bruno.mediodiaEnCasa()
+	bruno.mediodiaEnCasa()
+	bruno.mediodiaEnCasa() //Peso += 56000 gramos.
+	spa.atender(bruno) //Es feliz = true, peso -= 500, tiene sed = true (sigue siendo true porque no tomo agua).
+	bruno.tomarAgua()
+	assert.equals(false, bruno.tieneSed())
+	assert.equals(55500, bruno.peso())
+	bruno.comerFideos()	//Peso += 55750.
+	bruno.comerFideos()	//Comer fideos le hace subir 250 gramos.
+	bruno.comerFideos()
+	bruno.comerFideos()
+	bruno.comerFideos()
+	bruno.comerFideos()
+	assert.equals(57000, bruno.peso())
+	bruno.correr() //Correr le hace bajar 300 gramos.
+	bruno.correr()
+	assert.equals(56400, bruno.peso())
+	assert.equals(false, bruno.estaPerfecto()) //Para que este perfecto no tiene que tener sed, su peso tiene
+	bruno.verElNoticiero()					     //que estar entre 55000 y 57000 y tiene que estar feliz.
+	bruno.tomarAgua()
+	bruno.correr()
+	bruno.correr()
+	spa.atender(bruno)
+	bruno.tomarAgua() //Su peso bajo a 55300, ya no tiene sed y esta feliz.
+	assert.equals(55300, bruno.peso())
+	assert.equals(true, bruno.estaPerfecto())
+}
